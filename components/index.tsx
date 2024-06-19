@@ -1,5 +1,4 @@
-import Slider from "./main/slider"
-import Cards from "./main/cards"
-import FinalPart from "./main/final-part"
+import Header from "./header";
+import Footer from "./footer";
 
-export {Slider , Cards , FinalPart}
+export{Header , Footer}
