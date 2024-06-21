@@ -1,5 +1,3 @@
-import Carusel from "./carusel";
-import CaruselCatalog from "./carusel-catalog";
-import CaruselProduct from "./carusel-prodoct";
+import Login from "./modals/login"
 
-export{Carusel , CaruselCatalog , CaruselProduct} 
+export { Login }

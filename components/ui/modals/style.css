@@ -1,0 +1,10 @@
+.custom-ok-button {
+    background-color:green !important;  
+    border-color: green !important;     
+  }
+  
+  .custom-ok-button:hover {
+    background-color: green !important; 
+    border-color: green !important;      
+  }
+  
