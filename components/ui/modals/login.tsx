@@ -6,7 +6,7 @@ import Register from "./register";
 import { Login } from "@/service/auth.service";
 import "./style.css";
 
-const App: React.FC = () => {
+const LoginPart: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -46,7 +46,7 @@ const App: React.FC = () => {
   return (
     <>
       <button
-        className="w-[40px] h-[40px] bg-[#F2F2F2] rounded-lg  items-center justify-center"
+        className="w-[40px] h-[40px] bg-[#F2F2F2] rounded-lg flex items-center justify-center"
         onClick={showModal}
       >
         <UserOutlined />
@@ -90,4 +90,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default LoginPart;

@@ -67,6 +67,5 @@ export default function about() {
         </div>
       </div>
     </div>
-    
   );
 }

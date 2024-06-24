@@ -8,7 +8,7 @@ export default function Final() {
   return (
     <div>
       <div className="container mx-auto p-2">
-        <h1 className="text-[24px] mb-[40px] mt-[70px]">Полезное</h1>
+        <h1 className="text-[24px] mb-[40px] mt-[70px] px-6">Полезное</h1>
         <div className="flex flex-col lg:flex-row justify-center gap-3">
           <div className="w-full lg:w-[600px] bg-white p-[20px] lg:p-[35px]">
             <h1 className="text-[hsl(49,22%,10%)] text-[24px] lg:text-[32px]">
@@ -32,7 +32,7 @@ export default function Final() {
           </div>
         </div>
       </div>
-      <div className="container mx-auto p-2">
+      <div className="container mx-auto px-9">
         <h1 className="text-[24px] mt-[70px] mb-[40px]">Примущества</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
           <div className="w-full h-[250px] bg-white px-[32px] py-[50px] lg:py-[100px] relative flex flex-col items-center">
@@ -53,7 +53,7 @@ export default function Final() {
           </div>
         </div>
       </div>
-      <div className="container mx-auto p-2 sm:hidden xl:block">
+      <div className="container mx-auto p-2 sm:hidden xl:block px-9">
         <h1 className="text-[24px] mt-[70px] mb-[40px]">О нас</h1>
         <div className="grid justify-center">
           <Image src={img} alt="" width={1200} />

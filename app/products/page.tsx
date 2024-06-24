@@ -1,12 +1,12 @@
 "use client"
 import { Select } from "antd";
 import Aside from "../../components/products-main/aside";
-import Card from "@/components/ui/card";
+import Card from "@/components/ui/product-card";
 import { useState } from "react";
 
 export default function Page() {
   const [loading, setLoading] = useState(false);
-  const [cardsLoaded, setCardsLoaded] = useState(12); 
+  const [cardsLoaded, setCardsLoaded] = useState(9); 
 
   const handleLoadMore = () => {
     setLoading(true);

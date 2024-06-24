@@ -3,11 +3,6 @@ import img1 from "../../assets/images/pngwing 1.png";
 import img2 from "../../assets/images/Group 48097028.png";
 import img3 from "../../assets/images/Group 48097038.png";
 import img4 from "../../assets/images/pngwing 3.png";
-import img5 from "../../assets/images/ball.png"
-import img6 from "../../assets/images/fut.png"
-import img7 from "../../assets/images/kos.png"
-import img8 from "../../assets/images/shle.png"
-import img9 from "../../assets/images/mus.png"
 import Image from "next/image";
 
 export default function slider() {
@@ -25,7 +20,7 @@ export default function slider() {
   return (
     <div>
       {" "}
-      <div className="container flex justify-between gap-5 ml-28 flex-wrap ">
+      <div className="flex justify-around flex-wrap container mx-auto">
         <div className="xl:max-w-[800px] xl:h-[500px] sm:max-w-[350px] sm:h-[200px] max-w-full h-auto">
           <Carousel arrows infinite={true} autoplay>
             {arr.map((e) => (
@@ -67,36 +62,32 @@ export default function slider() {
           </div>
         </div>
       </div>
-      <div className="bg-white w-full mb-[70px] pb-[80px]">
-        <div className="container mx-auto">
-          <h1 className="text-[24px] pt-[19px] mb-5">Каталог</h1>
+      <div className="bg-white w-full mb-[70px]">
+        <div className="container mx-auto px-8 py-3">
+          <h1 className="text-[24px] mb-5">Каталог</h1>
           <Carousel infinite={true} autoplay>
             {arr.map((e) => (
               <div key={e}>
                 <div className="flex justify-between flex-wrap">
-                  <div className="w-[187px] h-[240px] bg-blue-300 flex flex-col items-center justify-center gap-5 text-[24px] ">
+                  <div className="w-[180px] h-[240px] bg-blue-300 flex flex-col items-center justify-center gap-5 text-[24px]">
                     Тренажеры
-                    <Image  src={img4} alt="" />
+                    <Image src={img4} alt="" />
                   </div>
                   <div className="w-[180px] h-[240px] bg-red-300 flex flex-col items-center justify-center gap-5 text-[24px]">
-                  Мячи
-                    <Image src={img5} alt="" />
+                    Тренажеры
+                    <Image src={img4} alt="" />
                   </div>{" "}
-                  <div className="w-[180px] h-[240px] bg-yellow-300  pl-5 flex flex-col items-center justify-center gap-5 text-[24px]  ">
-                  Спротивные обуви
-                    <Image src={img6} alt="" />
+                  <div className="w-[180px] h-[240px] bg-yellow-300 flex flex-col items-center justify-center gap-5 text-[24px]">
+                    Тренажеры
+                    <Image src={img4} alt="" />
                   </div>{" "}
-                  <div className="w-[180px] h-[240px] bg-purple-300 pl-5 flex flex-col items-center justify-center gap-5 text-[24px]">
-                  Спортивные одежды
-                    <Image src={img7} alt="" />
+                  <div className="w-[180px] h-[240px] bg-purple-300 flex flex-col items-center justify-center gap-5 text-[24px]">
+                    Тренажеры
+                    <Image src={img4} alt="" />
                   </div>{" "}
                   <div className="w-[180px] h-[240px] bg-gray-300 flex flex-col items-center justify-center gap-5 text-[24px]">
-                  Водный спорт
-                    <Image src={img8} alt="" />
-                  </div>
-                  <div className="w-[180px] h-[240px] bg-gray-300 flex flex-col items-center justify-center gap-5 text-[24px]">
-                  Горный спорт
-                    <Image src={img9} alt="" />
+                    Тренажеры
+                    <Image src={img4} alt="" />
                   </div>
                 </div>
               </div>

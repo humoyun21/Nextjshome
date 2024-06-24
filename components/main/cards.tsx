@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import img5 from "../../assets/images/pngegg (34) 3.png";
 import img6 from "../../assets/images/pngegg (34) 9.png";
@@ -8,41 +8,73 @@ import Link from "next/link";
 import { getProduct } from "@/service/product.service";
 import { useEffect, useState } from "react";
 import Cookie from "js-cookie";
+import { postLike } from "@/service/whislist.service";
 
 export default function Cards() {
   const [data, setData] = useState([]);
-  console.log(data);
-
-  const getData = async () => {
-    const response = await getProduct(4, 1);
-    if (response && response.status === 200) {
-      setData(response.data.products);
-    }
-  };
+  const [isTokenExist, setIsTokenExist] = useState(false);
 
   useEffect(() => {
+    const checkTokenExist = () => {
+      const token = Cookie.get("token");
+      setIsTokenExist(!!token);
+    };
+
+    const getData = async () => {
+      const response = await getProduct(4, 1);
+      if (response && response.status === 200) {
+        setData(response.data.products);
+      }
+    };
+
+    checkTokenExist();
     getData();
   }, []);
 
+  const postData = async (id: any) => {
+    const response = await postLike(id);
+    if (response && response.status === 201) {
+      console.log(response.data);
+    }
+  };
+
   return (
     <div>
-      <div className="container mx-auto ">
-        <Section title="Акция" defaultImage={img5} data={data} />
+      <div className="container mx-auto">
+        <Section
+          title="Акция"
+          defaultImage={img5}
+          data={data}
+          postData={postData}
+          isTokenExist={isTokenExist}
+        />
       </div>
       <div className="container mx-auto mt-[70px]">
-        <Section title="Новинки" defaultImage={img6} data={data} />
+        <Section
+          title="Новинки"
+          defaultImage={img6}
+          data={data}
+          postData={postData}
+          isTokenExist={isTokenExist}
+        />
       </div>
       <div className="container mx-auto mt-[70px]">
-        <Section title="Продукты" defaultImage={img7} data={data} />
+        <Section
+          title="Продукты"
+          defaultImage={img7}
+          data={data}
+          postData={postData}
+          isTokenExist={isTokenExist}
+        />
       </div>
     </div>
   );
 }
 
-function Section({ title, defaultImage, data }: any) {
+function Section({ title, defaultImage, data, postData, isTokenExist }: any) {
   return (
     <div>
-      <div className="flex justify-between items-center mb-4  flex-wrap">
+      <div className="flex justify-between items-center mb-4 flex-wrap px-6">
         <h1 className="text-[24px]">{title}</h1>
         <div className="flex gap-3">
           <button className="bg-white w-[40px] h-[40px] rounded-full">
@@ -57,9 +89,14 @@ function Section({ title, defaultImage, data }: any) {
         {data.map((product: any) => (
           <div key={product.product_id} className="relative">
             <div className="w-[250px] h-[350px] bg-white flex flex-col items-center justify-between relative shadow-md">
-              <div className="absolute right-[20px] top-[20px] cursor-pointer">
-                <HeartOutlined />
-              </div>
+              {isTokenExist && (
+                <div
+                  className="absolute right-[20px] top-[20px] cursor-pointer"
+                  onClick={() => postData(product.product_id)}
+                >
+                  <HeartOutlined />
+                </div>
+              )}
               <div className="w-[150px] h-[194px] grid justify-center items-center z-[999]">
                 <Image
                   src={product.image_url[0] || defaultImage}
@@ -93,6 +130,5 @@ function Section({ title, defaultImage, data }: any) {
         ))}
       </div>
     </div>
-    
   );
 }

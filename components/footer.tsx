@@ -5,7 +5,7 @@ function Footer() {
   return (
     <>
       <div className="w-full h-[24px] bg-[#FBD029]"></div>
-      <div className="w-full pt-[73px] pb-[44px] bg-[#1F1D14] border-b border-[rgba(242,242,242,0.3)]">
+      <div className="w-full pt-[73px] pb-[44px] bg-[#1F1D14] border-b border-[rgba(242,242,242,0.3)] px-[70px]">
         <div className="container mx-auto px-2 5">
           <div className="flex items-start justify-between">
             {/* <Image src={logo} alt="logo" width={189} height={59} /> */}
@@ -20,31 +20,50 @@ function Footer() {
               </p>
             </div>
             <p className=" text-white flex items-start gap-2">
-              <i className="bi bi-geo-alt text-white"></i>Tashkent Sh. Chilonzor 9 kvartal <br /> 12 uy
+              <i className="bi bi-geo-alt text-white"></i>Tashkent Sh. Chilonzor
+              9 kvartal <br /> 12 uy
             </p>
             <div>
               <p className="text-[18px] font-bold text-white">Подписатся</p>
               <form action="#" className="flex flex-col gap-4 pt-4">
-                <input type="text" className="w-[235px] py-2 px-4 bg-white rounded-sm outline-none text-[#9A9EA5] placeholder:text-[#9A9EA5]" placeholder="support@figma.com"/>
-                <button className="w-[235px] py-2 px-4 bg-[#FBD029] rounded-sm text-center">Отправить</button>
+                <input
+                  type="text"
+                  className="w-[235px] py-2 px-4 bg-white rounded-sm outline-none text-[#9A9EA5] placeholder:text-[#9A9EA5]"
+                  placeholder="support@figma.com"
+                />
+                <button className="w-[235px] py-2 px-4 bg-[#FBD029] rounded-sm text-center">
+                  Отправить
+                </button>
               </form>
               <div className="flex items-center gap-5 pt-10">
-              <a href="https://www.instagram.com/humoyun.21" target="_blank" rel="noopener noreferrer">
-      <i className="bi text-white text-[34px] bi-instagram"></i>
-    </a>
-              
-    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-      <i className="bi text-white text-[34px] bi-facebook"></i>
-    </a>
-    <a href="https://t.me/humoyun21" target="_blank" rel="noopener noreferrer">
-      <i className="bi text-white text-[34px] bi-telegram"></i>
-    </a>
+                <a
+                  href="https://www.instagram.com/humoyun.21"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="bi text-white text-[34px] bi-instagram"></i>
+                </a>
+
+                <a
+                  href="https://www.facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="bi text-white text-[34px] bi-facebook"></i>
+                </a>
+                <a
+                  href="https://t.me/humoyun21"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="bi text-white text-[34px] bi-telegram"></i>
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="w-full py-[22px] bg-[#1F1D14] border-b ">
+      <div className="w-full py-[22px] bg-[#1F1D14] border-b px-[70px]">
         <div className="container mx-auto px-2.5 flex items-center justify-between">
           <p className="text-[13px] font-light text-white">
             © {new Date().getFullYear()} All Rights Reserved

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import logo from "../assets/images/logo.svg";
 import Link from "next/link";
@@ -13,8 +13,21 @@ import {
 } from "@ant-design/icons";
 import Menu from "./ui/burger-menu";
 import { Login } from "./ui";
+import { useEffect, useState } from "react";
+import Cookies from "js-cookie";
 
 export default function Header() {
+  const [isTokenExist, setIsTokenExist] = useState(false);
+
+  const checkTokenExist = () => {
+    const token = Cookies.get("token");
+    setIsTokenExist(!!token);
+  };
+
+  useEffect(() => {
+    checkTokenExist();
+  });
+
   return (
     <header className="bg-[#1F1D14]">
       <nav className="py-1 flex justify-between items-center container mx-auto px-4 sm:px-6 lg:px-8">
@@ -85,10 +98,17 @@ export default function Header() {
             </label>
           </div>
           <div className="flex gap-2 sm:gap-4 items-center">
-            <Login/>
-            <button className="w-[40px] h-[40px] bg-[#F2F2F2] rounded-lg flex items-center justify-center">
-              <HeartOutlined />
-            </button>
+            <Login />
+            {isTokenExist ? (
+              <Link
+                href={"/wishlist"}
+                className="w-[40px] h-[40px] bg-[#F2F2F2] rounded-lg flex items-center justify-center"
+              >
+                <HeartOutlined />
+              </Link>
+            ) : (
+              <div></div>
+            )}
             <button className="px-4 py-2 bg-[#F2F2F2] rounded-lg flex items-center gap-1">
               <ShoppingCartOutlined />
               <span className="hidden sm:inline">Корзина</span>
